@@ -41,11 +41,3 @@ This Go application subscribes to an MQTT topic, listens for incoming messages, 
 ## Exit Gracefully
 To exit the application gracefully, send an interrupt signal (typically `Ctrl+C`). The application waits for ongoing processes to finish before exiting.
 
-## Customization
-Feel free to customize the application based on your MQTT and TDengine configurations. Refer to the code comments for additional information.
-
-For any issues or questions, please refer to the [documentation](#) or open a [new issue](<repository-url>/issues).
-
----
-
-**Note:** Replace `<repository-url>` and `<repository-name>` with the appropriate values for your GitHub repository.
