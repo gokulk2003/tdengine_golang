@@ -1,4 +1,4 @@
-MQTT to TDengine Data Ingestion
+#MQTT to TDengine Data Ingestion
 This Go application subscribes to an MQTT topic, listens for incoming messages, decodes the payload, and inserts the data into a TDengine database. Here's a simple guide to understand and use the application:
 
 Prerequisites
