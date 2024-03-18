@@ -22,25 +22,19 @@ This Java program is designed to parse XML data retrieved from a specified URL a
 
 ## Usage
 
-1. **Clone the Repository**: Clone or download the repository containing the Java source code.
-
-    ```bash
-    git clone <repository_url>
-    ```
-
-2. **Compile the Code**: Compile the Java source code using the following command:
+1. **Compile the Code**: Compile the Java source code using the following command:
 
     ```bash
     javac main.java
     ```
 
-3. **Run the Program**: Execute the compiled Java program using the following command:
+2. **Run the Program**: Execute the compiled Java program using the following command:
 
     ```bash
     java main
     ```
 
-4. **Output**: The program will fetch XML data from the specified URL, parse it, and print the values of specified tags to the console.
+3. **Output**: The program will fetch XML data from the specified URL, parse it, and print the values of specified tags to the console.
 
 
 
