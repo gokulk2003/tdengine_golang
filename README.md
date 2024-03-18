@@ -35,6 +35,8 @@ The program requires a configuration file named `config.json`, which should be l
     ]
   }
 }
+
+##config
 - **PROTOCOL**: Protocol used for communication (e.g., "mtconnect").
 - **MACHINE_IP**: IP address and port of the machine from which XML data is to be fetched.
 - **INTERVAL**: Interval (in seconds) at which the program will fetch the XML data.
