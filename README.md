@@ -60,4 +60,4 @@ The program requires a configuration file named `config.json`, which should be l
     java main
     ```
 
-3. **Output**: The program will fetch XML data from the specified URL, parse it, and print the values of sp
+3. **Output**: The program will fetch XML data from the specified URL, parse it, and print the values of specified tags to the console.
