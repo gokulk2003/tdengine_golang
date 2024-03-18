@@ -1,63 +1,46 @@
-# XML Parser with Java
+# MQTT to TDengine Data Forwarder
 
-This Java program is designed to parse XML data retrieved from a specified URL and extract values based on provided tags. It utilizes Java's built-in XML parsing capabilities along with the Jackson library for handling JSON configuration.
+This Go program subscribes to MQTT topics, receives data payloads, and inserts the data into a TDengine database. It utilizes the Eclipse Paho MQTT Go client library for MQTT communication and the TaosData Go driver for interacting with TDengine.
 
 ## Requirements
 
-- **Java Development Kit (JDK)**: Ensure JDK is installed on your system.
-- **Internet Connection**: Required to access XML data from a specified URL.
-- **Maven or any Build Tool**: Optional for dependency management.
+- **TDengine Database**: Ensure TDengine is installed and running on your system.
+- **MQTT Broker**: Have an MQTT broker accessible to which the program can connect.
+- **Go Programming Language**: Make sure Go is installed on your system.
 
 ## Configuration
-The program requires a configuration file named `config.json`, which should be located in the same directory as the Java source code. The configuration file should have the following structure:
+
+The program requires a configuration file named `config.json`, which should be located in the same directory as the executable. The configuration file should have the following structure:
+
 ```json
 {
-"MACHINE_PARAMS": {
-"PROTOCOL": "mtconnect",
-"MACHINE_IP": "localhost:5001",
-"INTERVAL": 5,
-"STATIC": {
-"GATEWAY_ID": "GW1234",
-"MACHINE_ID": "M1234"
-},
-"TAGS": [
-{
-"ControllerMode": "mode",
-"Availability": "avail",
-"Execution": "execution",
-"Load": "Sload",
-"EmergencyStop": "estop",
-"RotaryVelocity": "Srpm",
-"PartCount": "PartCountAct",
-"PalletId": "pallet_num"
-}
-]
-}
+  "topics": [
+    "topic1",
+    "topic2"
+  ]
 }
 ```
-
-- **PROTOCOL**: Protocol used for communication (e.g., "mtconnect").
-- **MACHINE_IP**: IP address and port of the machine from which XML data is to be fetched.
-- **INTERVAL**: Interval (in seconds) at which the program will fetch the XML data.
-- **STATIC**: Static parameters such as gateway ID and machine ID.
-- **TAGS**: Array of objects specifying XML tag names and corresponding aliases.
-
+- **topics: Array of MQTT topics to subscribe to.
 ## Dependencies
 
-- [Jackson](https://github.com/FasterXML/jackson) library is used for parsing JSON configuration files.
+- **Eclipse Paho MQTT Go client**: For MQTT communication.
+- **TaosData Go driver**: For interacting with TDengine.
+- The required dependencies (`github.com/eclipse/paho.mqtt.golang` and `github.com/taosdata/driver-go/v3/taosSql`) will be fetched automatically using Go modules.
 
 ## Usage
 
-1. **Compile the Code**: Compile the Java source code using the following command:
+1. **Clone the Repository**: Clone or download the repository containing the Go source code.
+
+2. **Build the Program**: Build the Go program using the following command:
 
     ```bash
-    javac main.java
+    go build
     ```
 
-2. **Run the Program**: Execute the compiled Java program using the following command:
+3. **Run the Program**: Execute the compiled program:
 
     ```bash
-    java main
+    ./mqtt_to_tdengine
     ```
 
-3. **Output**: The program will fetch XML data from the specified URL, parse it, and print the values of specified tags to the console.
+4. **Output**: The program will subscribe to the MQTT topics specified in the configuration file and insert received data into the TDengine database.
