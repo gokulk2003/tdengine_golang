@@ -29,18 +29,16 @@ The program requires a configuration file named `config.json`, which should be l
 
 ## Usage
 
-1. **Clone the Repository**: Clone or download the repository containing the Go source code.
-
-2. **Build the Program**: Build the Go program using the following command:
+1. **Build the Program**: Build the Go program using the following command:
 
     ```bash
     go build
     ```
 
-3. **Run the Program**: Execute the compiled program:
+2. **Run the Program**: Execute the compiled program:
 
     ```bash
     ./mqtt_to_tdengine
     ```
 
-4. **Output**: The program will subscribe to the MQTT topics specified in the configuration file and insert received data into the TDengine database.
+3. **Output**: The program will subscribe to the MQTT topics specified in the configuration file and insert received data into the TDengine database.
