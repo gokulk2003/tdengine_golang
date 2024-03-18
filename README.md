@@ -9,7 +9,32 @@ This Java program is designed to parse XML data retrieved from a specified URL a
 - **Maven or any Build Tool**: Optional for dependency management.
 
 ## Configuration
+The program requires a configuration file named `config.json`, which should be located in the same directory as the Java source code. The configuration file should have the following structure:
 
+```json
+{
+  "MACHINE_PARAMS": {
+    "PROTOCOL": "mtconnect",
+    "MACHINE_IP": "localhost:5001",
+    "INTERVAL": 5,
+    "STATIC": {
+      "GATEWAY_ID": "GW1234",
+      "MACHINE_ID": "M1234"
+    },
+    "TAGS": [
+      {
+        "ControllerMode": "mode",
+        "Availability": "avail",
+        "Execution": "execution",
+        "Load": "Sload",
+        "EmergencyStop": "estop",
+        "RotaryVelocity": "Srpm",
+        "PartCount": "PartCountAct",
+        "PalletId": "pallet_num"
+      }
+    ]
+  }
+}
 - **PROTOCOL**: Protocol used for communication (e.g., "mtconnect").
 - **MACHINE_IP**: IP address and port of the machine from which XML data is to be fetched.
 - **INTERVAL**: Interval (in seconds) at which the program will fetch the XML data.
