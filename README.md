@@ -10,7 +10,7 @@ This Java program is designed to parse XML data retrieved from a specified URL a
 
 ## Configuration
 The program requires a configuration file named `config.json`, which should be located in the same directory as the Java source code. The configuration file should have the following structure:
-
+```json
 {
 "MACHINE_PARAMS": {
 "PROTOCOL": "mtconnect",
